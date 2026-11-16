@@ -1,12 +1,144 @@
 {
   "recentFiles": [
     {
+      "basename": "questionService",
+      "path": "JAVA/项目和八股/项目/面试项目/Interview/questionService.md"
+    },
+    {
+      "basename": "persistenceService",
+      "path": "JAVA/项目和八股/项目/面试项目/Interview/persistenceService.md"
+    },
+    {
+      "basename": "InterviewSessionService",
+      "path": "JAVA/项目和八股/项目/面试项目/Interview/InterviewSessionService.md"
+    },
+    {
+      "basename": "分析与学习",
+      "path": "JAVA/项目和八股/项目/面试项目/分析与学习.md"
+    },
+    {
+      "basename": "服务图",
+      "path": "JAVA/项目和八股/项目/面试项目/服务图.canvas"
+    },
+    {
+      "basename": "ResumeController",
+      "path": "JAVA/项目和八股/项目/面试项目/ResumeController.md"
+    },
+    {
+      "basename": "总结",
+      "path": "JAVA/项目和八股/项目/面试项目/总结.md"
+    },
+    {
+      "basename": "简历书写",
+      "path": "JAVA/项目和八股/项目/面试项目/简历书写.md"
+    },
+    {
+      "basename": "幂等创建createIdempotentSession",
+      "path": "JAVA/项目和八股/项目/面试项目/InterviewService/InterviewSession/幂等创建createIdempotentSession.md"
+    },
+    {
+      "basename": "八股数据库",
+      "path": "JAVA/项目和八股/八股数据库.base"
+    },
+    {
+      "basename": "C++常见的STL的使用方法",
+      "path": "算法/C++/C++常见的STL的使用方法.md"
+    },
+    {
+      "basename": "数据库",
+      "path": "算法/算法学习路线/数据库.base"
+    },
+    {
       "basename": "README",
       "path": "README.md"
     },
     {
+      "basename": "617.合并二叉树",
+      "path": "算法/617.合并二叉树.md"
+    },
+    {
+      "basename": "621.任务调度器",
+      "path": "算法/621.任务调度器.md"
+    },
+    {
+      "basename": "145.二叉树的后序遍历",
+      "path": "算法/算法学习路线/分类/二叉树/145.二叉树的后序遍历.md"
+    },
+    {
+      "basename": "94.二叉树的中序遍历",
+      "path": "算法/算法学习路线/分类/二叉树/94.二叉树的中序遍历.md"
+    },
+    {
+      "basename": "144.二叉树的前序遍历",
+      "path": "算法/算法学习路线/分类/二叉树/144.二叉树的前序遍历.md"
+    },
+    {
+      "basename": "二叉树",
+      "path": "算法/算法学习路线/数据结构/二叉树.md"
+    },
+    {
+      "basename": "347.前k个高频元素",
+      "path": "算法/算法学习路线/分类/栈与队列/347.前k个高频元素.md"
+    },
+    {
+      "basename": "单调队列",
+      "path": "算法/算法学习路线/数据结构/单调队列.md"
+    },
+    {
+      "basename": "稀疏表",
+      "path": "算法/算法学习路线/数据结构/稀疏表.md"
+    },
+    {
+      "basename": "优先队列",
+      "path": "算法/算法学习路线/数据结构/优先队列.md"
+    },
+    {
+      "basename": "239.滑动窗口最大值",
+      "path": "算法/算法学习路线/分类/栈与队列/239.滑动窗口最大值.md"
+    },
+    {
+      "basename": "如何自定义容器的排序规则",
+      "path": "算法/C++/如何自定义容器的排序规则.md"
+    },
+    {
+      "basename": "232.用栈来实现队列",
+      "path": "算法/算法学习路线/分类/栈与队列/232.用栈来实现队列.md"
+    },
+    {
+      "basename": "225.使用队列实现栈",
+      "path": "算法/算法学习路线/分类/栈与队列/225.使用队列实现栈.md"
+    },
+    {
+      "basename": "150.逆波兰表达式求值",
+      "path": "算法/算法学习路线/分类/栈与队列/150.逆波兰表达式求值.md"
+    },
+    {
+      "basename": "关联",
+      "path": "_Temp/关联.md"
+    },
+    {
       "basename": "git命令",
       "path": "杂项/计算机操作相关/git相关/git命令.md"
+    },
+    {
+      "basename": "Spring常见面试题总结",
+      "path": "JAVA/项目和八股/java/Spring框架/Spring常见面试题总结.md"
+    },
+    {
+      "basename": "登录流程",
+      "path": "JAVA/项目和八股/项目/黑马点评/登录流程.md"
+    },
+    {
+      "basename": "黑马点评复习",
+      "path": "JAVA/项目和八股/项目/黑马点评/黑马点评复习.md"
+    },
+    {
+      "basename": "一些问题",
+      "path": "JAVA/项目和八股/项目/黑马点评/一些问题.md"
+    },
+    {
+      "basename": "有趣代码段",
+      "path": "JAVA/项目和八股/项目/黑马点评/有趣代码段.md"
     },
     {
       "basename": "13.罗马数字转整数",
@@ -17,40 +149,8 @@
       "path": "算法/11.盛最多水的体积.md"
     },
     {
-      "basename": "八股数据库",
-      "path": "JAVA/项目和八股/八股数据库.base"
-    },
-    {
-      "basename": "有趣代码段",
-      "path": "JAVA/项目和八股/项目/黑马点评/有趣代码段.md"
-    },
-    {
       "basename": "RefreshTokenIntercoptor",
       "path": "JAVA/项目和八股/项目/黑马点评/RefreshTokenIntercoptor.md"
-    },
-    {
-      "basename": "一些问题",
-      "path": "JAVA/项目和八股/项目/黑马点评/一些问题.md"
-    },
-    {
-      "basename": "黑马点评复习",
-      "path": "JAVA/项目和八股/项目/黑马点评/黑马点评复习.md"
-    },
-    {
-      "basename": "登录流程",
-      "path": "JAVA/项目和八股/项目/黑马点评/登录流程.md"
-    },
-    {
-      "basename": "服务图",
-      "path": "JAVA/项目和八股/项目/面试项目/服务图.canvas"
-    },
-    {
-      "basename": "总结",
-      "path": "JAVA/项目和八股/项目/面试项目/总结.md"
-    },
-    {
-      "basename": "分析与学习",
-      "path": "JAVA/项目和八股/项目/面试项目/分析与学习.md"
     },
     {
       "basename": "C++常见的STL的使用方法",
@@ -59,10 +159,6 @@
     {
       "basename": "数据库",
       "path": "03Leetcode/算法学习路线/数据库.base"
-    },
-    {
-      "basename": "ResumeController",
-      "path": "JAVA/项目和八股/项目/面试项目/ResumeController.md"
     },
     {
       "basename": "总览",
@@ -103,102 +199,6 @@
     {
       "basename": "239.滑动窗口最大值",
       "path": "03Leetcode/239.滑动窗口最大值.md"
-    },
-    {
-      "basename": "1047.删除字符串中所有的相邻重复项",
-      "path": "03Leetcode/算法学习路线/分类/栈与队列/1047.删除字符串中所有的相邻重复项.md"
-    },
-    {
-      "basename": "150.逆波兰表达式求值",
-      "path": "03Leetcode/算法学习路线/分类/栈与队列/150.逆波兰表达式求值.md"
-    },
-    {
-      "basename": "225.使用队列实现栈",
-      "path": "03Leetcode/算法学习路线/分类/栈与队列/225.使用队列实现栈.md"
-    },
-    {
-      "basename": "904.水果成篮",
-      "path": "03Leetcode/算法学习路线/分类/数组/904.水果成篮.md"
-    },
-    {
-      "basename": "20.有效的括号",
-      "path": "03Leetcode/算法学习路线/分类/栈与队列/20.有效的括号.md"
-    },
-    {
-      "basename": "unsafe类",
-      "path": "JAVA/项目和八股/java/JUC/unsafe类.md"
-    },
-    {
-      "basename": "未命名",
-      "path": "JAVA/项目和八股/java/JUC/未命名.md"
-    },
-    {
-      "basename": "死锁、死锁的避免和排查",
-      "path": "JAVA/项目和八股/java/JUC/死锁、死锁的避免和排查.md"
-    },
-    {
-      "basename": "线程池",
-      "path": "JAVA/项目和八股/java/JUC/线程池.md"
-    },
-    {
-      "basename": "线程创建方式",
-      "path": "JAVA/项目和八股/java/JUC/线程创建方式.md"
-    },
-    {
-      "basename": "线程池参数",
-      "path": "JAVA/项目和八股/java/JUC/线程池参数.md"
-    },
-    {
-      "basename": "BIO、NIO、AIO",
-      "path": "JAVA/项目和八股/java/JUC/BIO、NIO、AIO.md"
-    },
-    {
-      "basename": "ConcurrentHashMap",
-      "path": "JAVA/项目和八股/java/JAVA数组/ConcurrentHashMap.md"
-    },
-    {
-      "basename": "33号远征队",
-      "path": "06游戏体验/33号远征队.md"
-    },
-    {
-      "basename": "FIbonacci序列",
-      "path": "09学校课程/04大二下学期课程学习/组合数学/第二章/复习文档/FIbonacci序列.md"
-    },
-    {
-      "basename": "递推关系和母函数",
-      "path": "09学校课程/04大二下学期课程学习/组合数学/第二章/复习文档/递推关系和母函数.md"
-    },
-    {
-      "basename": "2.5母函数的性质",
-      "path": "09学校课程/04大二下学期课程学习/组合数学/第二章/复习文档/2.5母函数的性质.md"
-    },
-    {
-      "basename": "实例展示",
-      "path": "02Web开发/Web前端实战/ElementPlus/实例展示.md"
-    },
-    {
-      "basename": "新增部门",
-      "path": "02Web开发/Web前端实战/tilars实战/部门管理/新增部门.md"
-    },
-    {
-      "basename": "算法",
-      "path": "_Temp/算法.md"
-    },
-    {
-      "basename": "文件属性",
-      "path": "_Temp/文件属性.md"
-    },
-    {
-      "basename": "八股属性",
-      "path": "_Temp/八股属性.md"
-    },
-    {
-      "basename": "关联",
-      "path": "_Temp/关联.md"
-    },
-    {
-      "basename": "AQS与CLH",
-      "path": "JAVA/项目和八股/java/JUC/AQS与CLH.md"
     }
   ],
   "omittedPaths": [],

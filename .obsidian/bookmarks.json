@@ -1,55 +1,9 @@
 {
   "items": [
     {
-      "type": "group",
-      "ctime": 1791705933379,
-      "items": [
-        {
-          "type": "file",
-          "ctime": 1791707900558,
-          "path": "JAVA/项目和八股/java/JUC/线程池.md"
-        },
-        {
-          "type": "file",
-          "ctime": 1791787694797,
-          "path": "JAVA/项目和八股/数据库/SQL/SQL语法基础知识总结.md"
-        },
-        {
-          "type": "folder",
-          "ctime": 1791787703944,
-          "path": "JAVA/项目和八股/数据库/数据库基础"
-        },
-        {
-          "type": "folder",
-          "ctime": 1791795050923,
-          "path": "JAVA/项目和八股/计算机基础"
-        }
-      ],
-      "title": "复习"
-    },
-    {
-      "type": "group",
-      "ctime": 1791724874103,
-      "items": [
-        {
-          "type": "file",
-          "ctime": 1791724891930,
-          "path": "JAVA/项目和八股/java/JUC/BIO、NIO、AIO.md"
-        }
-      ],
-      "title": "未做，代办"
-    },
-    {
-      "type": "group",
-      "ctime": 1791862786978,
-      "items": [
-        {
-          "type": "folder",
-          "ctime": 1791862797232,
-          "path": "TaskNotes/Views"
-        }
-      ],
-      "title": "task"
+      "type": "folder",
+      "ctime": 1794825470208,
+      "path": "Clippings"
     }
   ]
 }

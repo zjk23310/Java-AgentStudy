@@ -3,7 +3,7 @@ views:
     name: 视图
     filters:
       and:
-        - file.inFolder("03Leetcode")
+        - file.inFolder("算法")
     order:
       - file.name
       - tags
