@@ -1,0 +1,346 @@
+{
+  "main": {
+    "id": "5ba73ebd02471fd6",
+    "type": "split",
+    "children": [
+      {
+        "id": "4060c5eabe747616",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "e2f7ce57d64f6dca",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "杂项/计算机操作相关/git相关/git命令.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "git命令"
+            }
+          },
+          {
+            "id": "1bc6188ac1d6f1c3",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "README.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "README"
+            }
+          }
+        ],
+        "currentTab": 1
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "855068cf9ef08f1c",
+    "type": "split",
+    "children": [
+      {
+        "id": "ae285c84f19a6b17",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "e851a7516117be26",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-folder-closed",
+              "title": "文件列表"
+            }
+          },
+          {
+            "id": "251388b44d89701a",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "tag:#算法/滑动窗口",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "搜索"
+            }
+          },
+          {
+            "id": "38c5bcfd50239413",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {
+                "showSearch": true,
+                "searchQuery": ""
+              },
+              "icon": "lucide-bookmark",
+              "title": "书签"
+            }
+          },
+          {
+            "id": "a24d01988b8896b1",
+            "type": "leaf",
+            "state": {
+              "type": "recent-files",
+              "state": {},
+              "icon": "clock",
+              "title": "Recent Files"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 270.80833435058594
+  },
+  "right": {
+    "id": "8806c9d06eb367db",
+    "type": "split",
+    "children": [
+      {
+        "id": "6c8631a59361ee05",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "be1e4b1a365e1d96",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "01Java/md/项目/面试项目/服务图.canvas",
+                "collapseAll": true,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": true,
+                "unlinkedCollapsed": false
+              },
+              "icon": "links-coming-in",
+              "title": "反向链接"
+            }
+          },
+          {
+            "id": "db165b1374e002b2",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "03Leetcode/算法学习路线/数据结构/优先队列.md",
+                "followCursor": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "大纲"
+            }
+          },
+          {
+            "id": "b7b80ae99096cd91",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "03Leetcode/算法学习路线/数据结构/优先队列.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "出链"
+            }
+          },
+          {
+            "id": "b0fb7ec008a612d7",
+            "type": "leaf",
+            "state": {
+              "type": "git-view",
+              "state": {},
+              "icon": "git-pull-request",
+              "title": "Source Control"
+            }
+          },
+          {
+            "id": "a41418da11c35897",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": true,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "标签"
+            }
+          },
+          {
+            "id": "14f7e7310bf893ac",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "添加笔记属性"
+            }
+          },
+          {
+            "id": "ee75d590b6e8e048",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "01Java/md/项目/面试项目/Upload.canvas",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "大纲"
+            }
+          },
+          {
+            "id": "3b099a6de07fea4a",
+            "type": "leaf",
+            "state": {
+              "type": "git-history-view",
+              "state": {},
+              "icon": "lucide-ghost",
+              "title": "git-history-view"
+            }
+          },
+          {
+            "id": "35635ce35bd32f11",
+            "type": "leaf",
+            "state": {
+              "type": "footnotes",
+              "state": {
+                "file": "01Java/md/项目/面试项目/Upload.canvas"
+              },
+              "icon": "lucide-file-signature",
+              "title": "脚注"
+            }
+          },
+          {
+            "id": "702c8cf6716270e6",
+            "type": "leaf",
+            "state": {
+              "type": "calendar-heatmap",
+              "state": {},
+              "icon": "lucide-ghost",
+              "title": "calendar-heatmap"
+            }
+          },
+          {
+            "id": "9990e4e6c7656702",
+            "type": "leaf",
+            "state": {
+              "type": "review-queue-list-view",
+              "state": {},
+              "icon": "lucide-ghost",
+              "title": "review-queue-list-view"
+            }
+          }
+        ],
+        "currentTab": 3
+      }
+    ],
+    "direction": "horizontal",
+    "width": 306.300048828125
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:打开快速切换": false,
+      "graph:查看关系图谱": false,
+      "canvas:新建白板": false,
+      "daily-notes:打开/创建今天的日记": false,
+      "templates:插入模板": false,
+      "command-palette:打开命令面板": false,
+      "bases:新建数据库": false,
+      "obsidian-excalidraw-plugin:New drawing": false,
+      "obsidian-git:Open Git source control": false,
+      "obsidian-spaced-repetition:复习卡片": false,
+      "templater-obsidian:Templater": false
+    }
+  },
+  "active": "1bc6188ac1d6f1c3",
+  "lastOpenFiles": [
+    "杂项/计算机操作相关/git相关/git命令.md",
+    "README.md",
+    "算法/13.罗马数字转整数.md",
+    "算法/11.盛最多水的体积.md",
+    "JAVA/项目和八股/八股数据库.base",
+    "杂项/计算机操作相关/git相关",
+    "杂项/计算机操作相关",
+    "杂项",
+    "JAVA/项目和八股/项目/黑马点评/有趣代码段.md",
+    "JAVA/项目和八股/项目/黑马点评/RefreshTokenIntercoptor.md",
+    "JAVA/项目和八股/项目/黑马点评/一些问题.md",
+    "JAVA/项目和八股/项目/黑马点评/黑马点评复习.md",
+    "JAVA/项目和八股/项目/黑马点评/登录流程.md",
+    "JAVA/项目和八股/项目/面试项目/服务图.canvas",
+    "JAVA/项目和八股/项目/面试项目/总结.md",
+    "JAVA/项目和八股/项目/面试项目/分析与学习.md",
+    "04C++/C++常见的STL的使用方法.md",
+    "03Leetcode/算法学习路线/数据库.base",
+    "JAVA/项目和八股/项目/面试项目/ResumeController.md",
+    "03Leetcode/算法学习路线/总览.canvas",
+    "03Leetcode/算法学习路线/分类/数组/27.移出元素.md",
+    "03Leetcode/算法学习路线/分类/哈希表/18.四数之和.md",
+    "03Leetcode/算法学习路线/分类/哈希表/15.三数之和.md",
+    "03Leetcode/算法学习路线/数据结构/优先队列.md",
+    "03Leetcode/算法学习路线/分类/栈与队列/239.滑动窗口最大值.md",
+    "03Leetcode/算法学习路线/数据结构/稀疏表.md",
+    "03Leetcode/算法学习路线/数据结构/单调队列.md",
+    "03Leetcode/算法学习路线/分类/栈与队列/232.用栈来实现队列.md",
+    "03Leetcode/239.滑动窗口最大值.md",
+    "03Leetcode/算法学习路线/分类/栈与队列/1047.删除字符串中所有的相邻重复项.md",
+    "03Leetcode/算法学习路线/分类/栈与队列/150.逆波兰表达式求值.md",
+    "03Leetcode/算法学习路线/分类/栈与队列/225.使用队列实现栈.md",
+    "03Leetcode/算法学习路线/分类/数组/904.水果成篮.md",
+    "JAVA/项目和八股/java/JAVA数组",
+    "03Leetcode/算法学习路线/分类/栈与队列",
+    "03Leetcode/算法学习路线/分类/哈希表",
+    "_Temp",
+    "03Leetcode/算法学习路线/分类/字符串",
+    "07读书记/未命名.canvas",
+    "01Java/md/项目/面试项目/StreamRedis流程.canvas",
+    "临时图片/Dockerfile-1793521881988.webp",
+    "临时图片/Dockerfile-1793521805937.webp",
+    "临时图片/数据卷挂载-1793520101963.webp",
+    "02Web开发/_Web开发.canvas",
+    "临时图片/MySQL常见面试题总结-1792399828713.webp",
+    "临时图片/Spring常见面试题总结-1792047275478.webp",
+    "01Java/md/项目/黑马点评/Untitled Diagram.svg",
+    "01Java/md/项目/黑马点评/未命名.canvas",
+    "临时图片/TCP三次握手，四次挥手-1792029670545.webp",
+    "临时图片/URL到完整显示网页的具体流程-1792024093246.webp",
+    "临时图片/MySQL常见面试题总结-1791964597501.webp",
+    "临时图片/计算机网络常见面试题总结-1791863103996.webp",
+    "未命名.canvas",
+    "02Web开发/Web前端实战/Vue/_Vue.canvas",
+    "02Web开发/Web前端实战/_Web前端.canvas",
+    "07读书记/我的一生/大纲.canvas"
+  ]
+}

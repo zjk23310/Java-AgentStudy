@@ -1,0 +1,15 @@
+views:
+  - type: table
+    name: 视图
+    filters:
+      and:
+        - file.inFolder("01Java")
+        - file.ext != "base"
+    order:
+      - file.name
+      - tags
+      - 复习时间
+      - 掌握
+    sort:
+      - property: 掌握
+        direction: ASC

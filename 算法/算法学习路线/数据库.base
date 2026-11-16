@@ -1,0 +1,22 @@
+views:
+  - type: table
+    name: 视图
+    filters:
+      and:
+        - file.inFolder("03Leetcode")
+    order:
+      - file.name
+      - tags
+      - summary
+      - 难度
+      - 掌握
+      - 复习时间
+    sort:
+      - property: tags
+        direction: ASC
+    columnSize:
+      file.name: 203
+      note.tags: 229
+      note.summary: 457
+      note.难度: 92
+      note.掌握: 87

@@ -1,0 +1,13 @@
+{
+  "theme": "obsidian",
+  "accentColor": "#976bff",
+  "nativeMenus": false,
+  "cssTheme": "Obsidianite",
+  "enabledCssSnippets": [],
+  "interfaceFontFamily": "Arial Black",
+  "textFontFamily": "",
+  "baseFontSizeAction": true,
+  "monospaceFontFamily": "Comic Sans MS",
+  "baseFontSize": 16,
+  "showRibbon": true
+}
