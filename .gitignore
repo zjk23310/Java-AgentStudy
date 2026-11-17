@@ -1,0 +1,6 @@
+# Obsidian 可重装依赖
+.obsidian/plugins/
+.obsidian/themes/
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/cache
