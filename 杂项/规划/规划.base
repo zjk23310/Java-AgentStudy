@@ -1,0 +1,16 @@
+views:
+  - type: table
+    name: 视图
+    filters:
+      and:
+        - file.inFolder("杂项/规划")
+        - file.ext != "base"
+    order:
+      - file.name
+      - created
+      - deadLine
+      - 掌握
+      - 进度
+    sort:
+      - property: created
+        direction: DESC

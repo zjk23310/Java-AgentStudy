@@ -84,6 +84,38 @@ flowchart TD
 
 
 # generateDirectionOnly生成全方位题
+```mermaid
+flowchart TD
+    A["开始：generateDirectionOnly(...)"] --> B["计算各分类题目数量 allocation"]
+    B --> C["生成 allocationTable"]
+    C --> D["记录方向题生成日志"]
+    D --> E["创建 Prompt variables"]
+    E --> F["填入题数、追问数、难度、技能和历史题目"]
+    F --> G["加入分类分配、参考资料和 JD 内容"]
+    G --> H["渲染 systemPrompt 和 userPrompt"]
+    H --> I["调用 structuredOutputInvoker.invoke()"]
+    I --> J["将 DTO 转换为 InterviewQuestionDTO 列表"]
+    J --> K{"是否至少有一道主问题？"}
+
+    K -->|否| L["记录空题单警告"]
+    L --> M["生成默认兜底题目"]
+    M --> N["返回题目列表"]
+
+    K -->|是| O["限制主问题数量：capToMainCount"]
+    O --> P["记录请求数和实际主问题数"]
+    P --> N
+
+    E -. "BusinessException" .-> Q["直接重新抛出"]
+    I -. "BusinessException" .-> Q
+    J -. "BusinessException" .-> Q
+    O -. "BusinessException" .-> Q
+
+    E -. "其他异常" .-> R["记录脱敏后的错误日志"]
+    I -.-> R
+    J -.-> R
+    O -.-> R
+    R --> M
+```
 
 # generateResumeQuestions生成简历题
 ```mermaid
@@ -109,7 +141,8 @@ flowchart TD
     L -->|否| N["记录脱敏后的错误日志"]
     N --> O["重新抛出原异常"]
 ```
-
+生成完成简历题目后会使用[[#capToMainCount 限制主问题数量]]来限制主题目数
+使用[[#convertToQuestions]]转换QuestionDto为InterviewQuestionDto
 # generateFallbackQuestions生成默认兜底题
 ```mermaid
 flowchart TD
@@ -146,4 +179,60 @@ flowchart TD
     X --> V
     V -->|否| Y["继续遍历下一条通用题"]
     Y --> Q
+```
+
+# capToMainCount 限制主问题数量
+```mermaid
+flowchart TD
+    A["开始：接收 questions 和 maxMainCount"] --> B["统计主问题数：过滤 !isFollowUp"]
+    B --> C{"主问题数 > maxMainCount？"}
+
+    C -->|否| D{"主问题数 < maxMainCount？"}
+    D -->|是| E["记录主问题不足警告"]
+    D -->|否| F["不截断"]
+    E --> G["返回原 questions"]
+    F --> G
+
+    C -->|是| H["创建 capped 列表，mainSeen = 0"]
+    H --> I["遍历 questions 中的下一道题"]
+    I --> J{"当前题是主问题？"}
+    J -->|是| K["mainSeen 加 1"]
+    J -->|否| L{"mainSeen > maxMainCount？"}
+    K --> L
+
+    L -->|是| M["停止遍历"]
+    L -->|否| N["将当前题加入 capped"]
+    N --> O{"还有下一道题？"}
+    O -->|是| I
+    O -->|否| P["遍历结束"]
+
+    M --> Q["记录截断日志"]
+    P --> Q
+    Q --> R["返回 capped"]
+```
+# convertToQuestions
+```mermaid
+flowchart TD
+    A["开始：convertToQuestions(dto)"] --> B["创建空 questions 列表，index = 0"]
+    B --> C{"dto 或 dto.questions() 为 null？"}
+
+    C -->|是| D["返回空列表"]
+    C -->|否| E["遍历 dto.questions() 中的每个 QuestionDTO"]
+    E --> F{"q 为 null，或 question 为空白？"}
+    F -->|是| G["跳过当前 q"]
+    G --> H{"还有下一个 q？"}
+
+    F -->|否| I["确定 type：有值则转大写，否则使用默认类型"]
+    I --> J["记录 mainQuestionIndex = index"]
+    J --> K["创建主问题并加入列表；index 加 1"]
+    K --> L["清理 followUps：过滤空值、去空格并限制数量"]
+    L --> M{"还有未处理的追问？"}
+    M -->|是| N["创建追问并加入列表"]
+    N --> O["设置 isFollowUp = true，parentQuestionIndex = mainQuestionIndex"]
+    O --> P["index 加 1，继续处理下一条追问"]
+    P --> M
+    M -->|否| H
+
+    H -->|是| E
+    H -->|否| Q["返回 questions 列表"]
 ```

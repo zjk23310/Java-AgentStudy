@@ -11,9 +11,9 @@ views:
       - 复习时间
       - 掌握
     sort:
-      - property: 复习时间
-        direction: DESC
       - property: tags
+        direction: DESC
+      - property: 复习时间
         direction: DESC
       - property: 掌握
         direction: ASC

@@ -29,6 +29,7 @@
     "summary": "text",
     "created": "date",
     "updated": "date",
-    "复习时间": "date"
+    "复习时间": "date",
+    "deadLine": "date"
   }
 }

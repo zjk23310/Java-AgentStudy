@@ -138,4 +138,42 @@ flowchart TD
     R --> Q
 ```
 解析问题使用objectMapper
-查询问题之类的就使用的是数据库的相关操作，保存到Redis使用saveSession，保存到Redis就从中获取CachedSession
+查询问题之类的就使用的是数据库的相关操作，保存到Redis使用saveSession，保存到Redis就从中获取CachedSessiona
+
+# getSession获取会话信息
+```mermaid
+flowchart TD
+    A["开始：getSession(sessionId)"] --> B["从 Redis 查询会话缓存"]
+    B --> C{"缓存命中？"}
+
+    C -->|是| D["CachedSession 转换为 InterviewSessionDTO"]
+    D --> E["返回 DTO"]
+
+    C -->|否| F["尝试从数据库恢复会话"]
+    F --> G{"恢复成功？"}
+    G -->|是| H["CachedSession 转换为 InterviewSessionDTO"]
+    H --> E
+    G -->|否| I["抛出 INTERVIEW_SESSION_NOT_FOUND 异常"]
+```
+这里从数据库恢复并不是直接使用[[#restoreSessionFromEntity恢复操作]]不过底层还是使用了这个函数，但是要先根据SessionId找到对应的InterviewSessionEntity实体
+
+# getCurrentQuestion
+```mermaid
+flowchart TD
+    A["开始：getCurrentQuestion(sessionId)"] --> B["获取或恢复会话"]
+    B --> C["读取题目列表"]
+    C --> D{"currentIndex >= 题目数量？"}
+
+    D -->|是| E["返回 null：所有题目已完成"]
+    D -->|否| F{"会话状态是 CREATED？"}
+
+    F -->|否| J["读取当前题目"]
+    F -->|是| G["将状态改为 IN_PROGRESS"]
+    G --> H["更新 Redis 会话状态"]
+    H --> I["同步更新数据库状态"]
+    I --> J
+    I -. "更新数据库失败" .-> K["记录警告日志"]
+    K --> J
+
+    J --> L["返回 questions[currentIndex]"]
+```
