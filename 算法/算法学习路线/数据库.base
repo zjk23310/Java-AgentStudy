@@ -7,12 +7,12 @@ views:
     order:
       - file.name
       - tags
-      - summary
-      - 难度
       - 掌握
       - 复习时间
+      - summary
+      - 难度
     sort:
-      - property: tags
+      - property: 掌握
         direction: ASC
     columnSize:
       file.name: 203

@@ -4,10 +4,10 @@
   "nativeMenus": false,
   "cssTheme": "Obsidianite",
   "enabledCssSnippets": [],
-  "interfaceFontFamily": "Arial Black",
+  "interfaceFontFamily": "",
   "textFontFamily": "",
   "baseFontSizeAction": true,
-  "monospaceFontFamily": "Comic Sans MS",
+  "monospaceFontFamily": "",
   "baseFontSize": 16,
   "showRibbon": true
 }
