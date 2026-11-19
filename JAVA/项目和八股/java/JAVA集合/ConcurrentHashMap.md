@@ -14,10 +14,27 @@ updated: 2026-11-18
 上面的网站介绍了ConcurrentHashMap还有Segment
 
 相关笔记：
-[[HashMap]]]
+[[HashMap]]
 
 ---
 # ConcurrentHashMap
+## 1.7
+Concurrent既要线程安全又不能让所有读写串行化。它将一把大锁拆分成多把锁--分段锁
+整体结构是使用两层哈希表
+第一层是段数组，长度=并发度
+第二层是每个段内部的小hashmap
+首先需要了解这个有参构造函数的内部实现逻辑
+初始化的参数有：初始化容量、加载因子、并行化等级。根据并行化等级会得到ssize,sshift和segmentMask
+put方法
+put方法首先会根据key计算哈希，并根据哈希获取对应的segment下标。如果对应的segment为空则会进行初始化，并返回已经初始化成功的segment，之后会向对应的segment插入相应的值
+ensureSegment方法首先会根据segment的位置，却并是否当前segment位置是否为空，如果为空则获取0号segment里的hashEntry里的初始化长度，根据加载因子计算扩容阈值。后创建容量为cap的hashEntry数组。如果再次检查对应位置的segmnet为空则创建segment参数分别为lf,threshold,tab。并使用资源赋值。
+最后讲解下segment段里的put操作
+首先会获取ReentrantLocak独占锁，如果获取不到则scanAndLockForPut。之后计算要put的数据位置，CAS获取对应tab的first，然后遍历链表并尝试赋值（就是很像hashMap的put）。这里要看开头的HashEntry，如果为空的话会直接进行头插，如果不为空则要遍历（遍历是向next遍历，如果最后为null则肯定会得到对应的null)（还需要注意的是头插入的时候node获取到锁时是null，获取不到锁就要用scanAndLockForPut）
+scan函数
+
+get方法
+计算得到key存放位置
+遍历指定位置查找相同key的value
 
 ## 1.8之后
 初始化

@@ -1,5 +1,5 @@
 ---
-summary:
+summary: 本项目的RAG相关
 tags:
 created: 2026-11-17
 updated: 2026-11-17
@@ -10,8 +10,6 @@ updated: 2026-11-17
 
 
 ---
-
-
 简历可以写：
 针对知识库问答的语义检索场景，基于 pgvector 实现文档分块、1024 维向量化、metadata 过滤和相似度搜索，支撑多知识库隔离检索与 RAG 多轮问答。
 
@@ -29,7 +27,21 @@ updated: 2026-11-17
 RAG如何查询相关的Document呢？
 [[konwledgeBaseVectorService#similaritySearch和similaritySearchFallback]]
 基于多个知识库回答用户问题：
+[[konwledgeBaseQueryService#anserQuestion]]该方法记录了基于多个知识库的操作
+里面的亮点可以讲一下查询语句重写。为什么要查询语句重写呢？因为用户可能会出现表达模糊，口语化、缺少上下文，过短查询的问题（问题很短）
+这个重写还是解决了很多问题的
+https://www.yuque.com/snailclimb/itdq8h/grm2dzfgrcb16cb8?inner=omAiX
+这部分展示了项目查询重写的核心优化
+## 多轮对话支持
+多轮对话支持只要是由会话服务支持的[[RagChatSessionService]],除此之外可以在[[RagChatController]]中找到使用了Session服务的接口
 
 
 
-
+# 核心要点：
+- **PostgreSQL + pgvector**：适合中小型项目的向量存储方案，架构简单，性能足够
+- **HNSW 索引**：分层导航图算法，提供毫秒级检索速度
+- **文档切分**：使用 TokenTextSplitter，当前默认每块目标 800 tokens、无 overlap；重叠分块尚未实现，是否引入需结合边界题评测。
+- **向量化批次控制**：注意 Embedding API 的 batch size 限制
+- **多轮对话支持**：通过会话管理实现上下文记忆
+- **提示词工程**：明确约束 AI 行为，降低幻觉风险
+- **流式输出**：提升用户体验，降低首字延迟
