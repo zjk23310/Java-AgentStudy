@@ -1,3 +1,16 @@
+---
+summary:
+tags:
+created: 2026-11-19
+updated: 2026-11-21
+---
+相关网址：
+
+相关笔记：
+[[SSE、Flux流式响应]]
+
+---
+
 # 创建对话
 使用到了[[RagChatSessionService#createSession]]
 # sendMessageStream
@@ -42,6 +55,7 @@ flowchart TD
 注意！！！这里会可能获取历史的信息（这就与[[konwledgeBaseQueryService#anserQuestion]]不同了，因为可以看到这个函数的history基本全是空集合，但是使用流式响应的时候却可以获取历史记录(从messagRepository中操作)
 然后就用[[konwledgeBaseQueryService#anserQuestionStream]]参数是kbIds、question、history
 如果想要了解代码中的各种doOnComplete等链式调用可以参考网站：[Flux流式响应详解 - DeepSeek](https://chat.deepseek.com/a/chat/s/c568cefb-daab-4739-ae7b-6449757db67f)（当然这是我自己的DeepSeek，如果你搞不懂的话也可以按照响应的关键词询问AI)
+最后要包装成**ServerSentEvent**返回给前端
 ## RAG问答优化：多轮上下文与短查询命中修复
 ### RAG问答无状态
 RagChatSessionService虽然把每轮对话都存入数据库，但是getStreamAnser调用只上传了知识库ID和当前位置（当然，这个问题已经解决了），不加载历史，每次提问都是独立的一次检索生成，LLM完全不知道之前聊了啥

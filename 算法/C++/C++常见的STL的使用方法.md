@@ -10,6 +10,7 @@ updated: 2026-11-16
 [C++ string常用方法 - DeepSeek](https://chat.deepseek.com/a/chat/s/f8a0bf5b-bdbd-48c2-aee7-356cf5a281dd)
 [C++队列STL用法 - DeepSeek](https://chat.deepseek.com/a/chat/s/d8dff9ff-105d-4cc6-b38a-7ae95af63a49)
 [C++Vector使用指南 - DeepSeek](https://chat.deepseek.com/a/chat/s/3e8022b8-8d33-489a-af1d-6537259a62f8)
+[C++ pair详解 - DeepSeek](https://chat.deepseek.com/a/chat/s/4576058f-eb5a-4084-a761-f60914a11ead)
 相关笔记：
 
 

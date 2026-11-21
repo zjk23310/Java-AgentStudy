@@ -9,8 +9,14 @@ views:
       - file.name
       - created
       - deadLine
+      - 完成日期
+      - 最新复习时间
       - 掌握
       - 进度
     sort:
+      - property: 完成日期
+        direction: ASC
       - property: created
         direction: DESC
+    columnSize:
+      note.完成日期: 112

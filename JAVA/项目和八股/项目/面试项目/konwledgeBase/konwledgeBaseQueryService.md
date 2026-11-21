@@ -2,8 +2,15 @@
 summary:
 tags:
 created: 2026-11-17
-updated: 2026-11-17
+updated: 2026-11-21
 ---
+相关网址：
+[[SSE、Flux流式响应]]
+相关笔记：
+
+
+---
+
 # anserQuestion
 ```mermaid
 flowchart TD
@@ -116,8 +123,9 @@ for (Long id : uniqueIds) {
 int updated = knowledgeBaseRepository.incrementQuestionCountBatch(uniqueIds);  
 log.debug("批量更新知识库提问计数: ids={}, updated={}", uniqueIds, updated);
 ```
+这个方法还能够检查知识库是否存在。
 之后清理历史消息并改写问题，这个清理实例消息就是如果历史消息为null的话返回一个空集合，改写问题没变。还是同样的向量检索相关文档。如果没有相关的文档就记录拒绝回答指标，并写入可选执行轨迹
-否则整理文档上下文，构建提示词这些都差不多。问题的关键在于流式调用
+否则整理文档上下文，构建提示词（系统提示词，用户提示词（用户提示词需要用到文档上下文和question））这些都差不多。问题的关键在于流式调用
 后面流式调用的流程图为:
 ```mermaid
 flowchart TD

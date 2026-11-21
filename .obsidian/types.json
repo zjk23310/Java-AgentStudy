@@ -30,6 +30,8 @@
     "created": "date",
     "updated": "date",
     "复习时间": "date",
-    "deadLine": "date"
+    "deadLine": "date",
+    "完成日期": "date",
+    "最新复习时间": "date"
   }
 }
