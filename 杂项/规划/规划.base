@@ -14,9 +14,9 @@ views:
       - 掌握
       - 进度
     sort:
+      - property: 最新复习时间
+        direction: DESC
       - property: 完成日期
-        direction: ASC
-      - property: created
         direction: DESC
     columnSize:
       note.完成日期: 112

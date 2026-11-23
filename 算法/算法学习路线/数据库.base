@@ -12,12 +12,12 @@ views:
       - summary
       - 难度
     sort:
+      - property: 复习时间
+        direction: ASC
       - property: tags
         direction: ASC
       - property: 掌握
         direction: ASC
-      - property: 复习时间
-        direction: DESC
     columnSize:
       file.name: 203
       note.tags: 325

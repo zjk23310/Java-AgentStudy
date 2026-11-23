@@ -18,7 +18,7 @@
 
 - [Java 基础常见面试题](JAVA/项目和八股/java/JAVASE/JAVA基础常见的面试题.md)
 - [线程池](JAVA/项目和八股/java/JUC/线程池.md) · [线程池参数](JAVA/项目和八股/java/JUC/线程池参数.md)
-- [垃圾回收](JAVA/项目和八股/java/JVM/垃圾回收.md) · [垃圾回收器](JAVA/项目和八股/java/JVM/垃圾回收器.md)
+- [JVM垃圾回收](JVM垃圾回收.md) · [垃圾回收器](JAVA/项目和八股/java/JVM/垃圾回收器.md)
 - [MySQL 常见面试题](JAVA/项目和八股/数据库/MySQL/MySQL常见面试题总结.md) · [MySQL 索引](JAVA/项目和八股/数据库/MySQL/MySQL索引.md)
 - [Redis GEO](JAVA/项目和八股/数据库/Redis/基于Redis的GEO功能.md) · [黑马点评复习](JAVA/项目和八股/项目/黑马点评/黑马点评复习.md)
 

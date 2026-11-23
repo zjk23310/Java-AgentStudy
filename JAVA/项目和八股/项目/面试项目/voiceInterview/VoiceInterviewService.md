@@ -1,0 +1,3 @@
+# createSession创建会话
+这个创建会话的方法比较简单，参数是创建会话请求
+之后获取相关的参数，然后构建VoiceInterviewSessionEntity，将其存入数据库，并存入Redis，返回构建的响应
