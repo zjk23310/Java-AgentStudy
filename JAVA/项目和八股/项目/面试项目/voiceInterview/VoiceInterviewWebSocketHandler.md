@@ -199,7 +199,64 @@ flowchart TD
 ```
 ### 调用QwenAsrService的sendAudio
 这里的方法和上面的方法不同，上面方法的方向是AI->前端，将AI生成转换的Base64通过WebSocket发送给浏览器
+这段话非常之重要
 这个方法是用户->ASR，检查ASR会话是否就绪，把用户音频发给语音识别服务
+`sendAudio()` 返回 `void`，是因为它**只负责把一段音频送给 ASR 服务**，不会在这个方法里等识别结果。语音识别是实时、异步返回的：ASR 稍后通过回调把文字传回来
+```
+前端发送音频
+  → Handler.handleUserAudio()
+  → sttService.sendAudio(sessionId, audioData)
+  → ASR 服务识别音频
+  → ASR 通过回调返回 partial / final 文字
+  → handleSttResult()
+  → WebSocket 把字幕发回前端
+```
+回调是在启动 ASR 时注册的
+```
+sttService.startTranscription(
+    sessionId,
+    text -> handleSttResult(sessionId, text, true),  // ASR 确认的文本段
+    text -> handleSttResult(sessionId, text, false), // 实时 partial 文本
+    ...
+);
+```
+ASR 收到识别事件后，会分别调用这些回调。比如 `QwenAsrService` 收到 completed 事件时调用 `onFinal.accept(transcript)`；收到流式文本事件时调用 `onPartial.accept(text)`。
+## 从麦克风到LLM的路径
+```
+前端麦克风音频
+  → handleUserAudio()
+  → sttService.sendAudio(sessionId, audioData)
+  → ASR 异步返回识别文本
+  → handleSttResult()
+  → 用户点击“提交回答”
+  → handleControl()
+  → flushMergedUtteranceToLlm()
+  → triggerLlmResponse()
+```
+## handleSttResult
+接收 ASR 返回的文字，并分清它是**临时识别文本**还是**已经确认的识别文本段**。它负责更新字幕和缓冲区，**不会在这里调用 LLM**。
+```mermaid
+flowchart TD
+    A["ASR 回调：收到 recognizedText"] --> B["查找 WebSocketSession 和 SessionState"]
+    B --> C{"连接或状态缺失？"}
+    C -->|是| D["记录警告并返回"]
+    C -->|否| E{"正在处理回答或 AI 说话/冷却中？"}
+    E -->|是| F["丢弃迟到的识别结果并返回"]
+    E -->|否| G{"isFinalSegment？"}
+
+    G -->|否：临时识别文本| H["更新时间"]
+    H --> I["与已确认文本合成字幕预览"]
+    I --> J["发送非最终字幕"]
+    J --> K["返回，不写入 mergeBuffer"]
+
+    G -->|是：ASR 确认的文本段| L["记录 ASR 定稿指标"]
+    L --> M["appendFinalSttSegment 合并到 mergeBuffer"]
+    M --> N["读取累计文本"]
+    N --> O["发送非最终字幕"]
+    O --> P["等待前端 submit；此处不触发 LLM"]
+```
+- **partial 临时文本**：发字幕给前端显示，不写入后端 `mergeBuffer`。
+- **ASR 确认的文本段**：调用 `state.appendFinalSttSegment(recognizedText)`，追加到 `mergeBuffer`，并发字幕给前端
 ## handleControl
 负责处理客户端发来的**控制类 WebSocket 消息**。它根据 `action` 字段分流，当前支持 `submit`、`end_interview` 和 `start_phase`
 ```mermaid
@@ -314,7 +371,41 @@ LLM全文生成结束之后方法还会发送一条最终文本，保存用户�
 - 将 `aiSpeaking` 设回 `false`。
 - 设置 AI 播放结束后的 800 毫秒冷却时间，防止回声立即进入 ASR。
 ##### chatStreamSentences
-# afterConnectionClosed
+**调用 LLM 流式生成回答，生成过程中分别通过两个回调发送实时文本和完整句子，最后返回整理后的完整回答。**
+```mermaid
+flowchart TD
+    A["收到用户回答、会话和历史记录"] --> B["构造 Prompt 上下文"]
+    B --> C["根据 session 选择 ChatClient"]
+    C --> D["初始化原始文本、推送时间和句子位置"]
+    D --> E["开始 LLM 流式生成"]
+    E --> F{"收到的 token 为空？"}
+
+    F -->|是| E
+    F -->|否| G["追加 token 到 raw"]
+    G --> H{"onSentence 存在且 token 含句末标点？"}
+    H -->|是| I["规范化累计文本，提取新文本段"]
+    I --> J["调用 onSentence"]
+    H -->|否| K{"onToken 存在且时间、字符阈值都满足？"}
+    J --> K
+    K -->|是| L["规范化累计文本并调用 onToken"]
+    K -->|否| M{"LLM 流结束？"}
+    L --> M
+    M -->|否| E
+
+    M -->|是| N{"还有未发送的句子尾段？"}
+    N -->|是| O["调用 onSentence 发送尾段"]
+    N -->|否| P["优化完整回答"]
+    O --> P
+    P --> Q{"onToken 存在且结果非空？"}
+    Q -->|是| R["调用 onToken 推送最终完整文本"]
+    Q -->|否| S["返回优化后的回答"]
+    R --> S
+
+    E -. 发生异常 .-> T["记录日志并映射成用户可读错误"]
+    T --> U["返回错误提示文本"]
+```
+# afterConnectionClose
+
 ```mermaid
 flowchart TD
     A["WebSocket 连接关闭"] --> B["Spring 调用 afterConnectionClosed(session, status)"]
