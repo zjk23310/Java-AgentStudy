@@ -11,7 +11,12 @@ updated: 2026-11-16
 [C++队列STL用法 - DeepSeek](https://chat.deepseek.com/a/chat/s/d8dff9ff-105d-4cc6-b38a-7ae95af63a49)
 [C++Vector使用指南 - DeepSeek](https://chat.deepseek.com/a/chat/s/3e8022b8-8d33-489a-af1d-6537259a62f8)
 [C++ pair详解 - DeepSeek](https://chat.deepseek.com/a/chat/s/4576058f-eb5a-4084-a761-f60914a11ead)
+[C++ SetSTL用法 - DeepSeek](https://chat.deepseek.com/a/chat/s/471962e5-d9e8-40da-9637-6853a942fa42)
 相关笔记：
 
 
 ---
+# string
+
+# set
+这里的unordered_set是不能使用unordered_set<vector\<int>>这种的。但是set可以使用

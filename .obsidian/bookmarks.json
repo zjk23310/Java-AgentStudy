@@ -50,53 +50,9 @@
           "path": "算法/算法学习路线/分类/二叉树"
         },
         {
-          "type": "graph",
-          "ctime": 1795497836338,
-          "title": "算法图谱",
-          "options": {
-            "collapse-filter": false,
-            "search": "path:算法/算法学习路线  ",
-            "showTags": false,
-            "showAttachments": false,
-            "hideUnresolved": false,
-            "showOrphans": false,
-            "collapse-color-groups": true,
-            "colorGroups": [
-              {
-                "query": "tag:#算法/二叉树  ",
-                "color": {
-                  "a": 1,
-                  "rgb": 14701138
-                }
-              },
-              {
-                "query": "tag:#算法/二叉搜索树  ",
-                "color": {
-                  "a": 1,
-                  "rgb": 11657298
-                }
-              },
-              {
-                "query": "tag:#算法/二叉树的遍历  ",
-                "color": {
-                  "a": 1,
-                  "rgb": 14725458
-                }
-              }
-            ],
-            "collapse-display": false,
-            "showArrow": true,
-            "textFadeMultiplier": 0,
-            "nodeSizeMultiplier": 1,
-            "lineSizeMultiplier": 1,
-            "collapse-forces": false,
-            "centerStrength": 0.653114186851211,
-            "repelStrength": 10.7785467128028,
-            "linkStrength": 0.45242214532872,
-            "linkDistance": 500,
-            "scale": 0.6623870408471694,
-            "close": true
-          }
+          "type": "file",
+          "ctime": 1795672280060,
+          "path": "JAVA/项目和八股/数据库/MySQL/MySQL索引失效的情况.md"
         }
       ],
       "title": "复习"
